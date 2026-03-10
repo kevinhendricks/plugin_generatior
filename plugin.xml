@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <name>RemoveInlineScripts</name>
+  <type>Edit</type>
+  <version>0.1.0</version>
+  <author>Plugin Generator</author>
+  <description>Select HTML files from your filesystem, strip all script tags that lack a src attribute, and import the cleaned files into the current epub.</description>
+  <homepage>https://github.com/kevinhendricks/plugin_generatior</homepage>
+  <engine>plugin.py</engine>
+  <autoclose>false</autoclose>
+  <minimum_sigil_version>1.0.0</minimum_sigil_version>
+</plugin>
