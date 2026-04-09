@@ -3,11 +3,19 @@
   @indent 2;
   @css-fold false;
 
-  /* block-level elements */
-  html, body, p, div, h1, h2, h3, h4, h5, h6, ol, ul, li, address, blockquote,
-  dd, dl, fieldset, form, hr, nav, menu, pre, table, tr, td, th, article {
+  /* structural block-level elements */
+
+  article, aside, blockquoate, canvas, colgrroup, div, dl, figure, footer, header,
+  hr, html, ol, section, table, tbody, ul, math, maction, annotation, annotation-xml,
+  menclose, mfrac, mmultiscripts, mover, mpadded, mphantom, mroot, mrow, semantics,
+  msqrt, mstyle, mtable, munder, munderover, nav {
+      opentag-br : 2 1;
+      closetag-br: 1 2;
+  }
+
+  p, h1, h2, h3, h4, h5, li, dd, dl, fieldset, form, menu, pre, tr, td, th {
       opentag-br : 1 0;
-      closetag-br: 0 1;
+      closetag-br: 0 2;
   }
 
   /* head elements */
@@ -41,11 +49,6 @@
   body {
       opentag-br : 2 1;
       closetag-br: 1 1;
-  }
-
-  h1,h2,h3,h4,h5,h6 {
-      opentag-br : 2 0;
-      closetag-br: 0 2;
   }
 
   pre {
