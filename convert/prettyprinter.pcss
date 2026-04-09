@@ -1,0 +1,53 @@
+
+/* global settings */
+  @indent 2;
+  @css-fold false;
+
+  /* block-level elements */
+  html, body, p, div, h1, h2, h3, h4, h5, h6, ol, ul, li, address, blockquote,
+  dd, dl, fieldset, form, hr, nav, menu, pre, table, tr, td, th, article {
+      opentag-br : 1 0;
+      closetag-br: 0 1;
+  }
+
+  /* head elements */
+  head, meta, link, title, style, script {
+      opentag-br : 1 0;
+      closetag-br: 0 1;
+  }
+
+  /* xm"l header */
+  ?xml {
+      opentag-br: 0 1;
+  }
+
+  /* doctype */
+  !DOCTYPE {
+      opentag-br  : 1 2;
+      attr-fm-resv: true;
+  }
+
+  /* xhtml element */
+  html {
+    inner-ind-adj:-1;
+  }
+
+  /* comment */
+  !-- {
+      attr-fm-resv: true;
+  }
+
+  /* main */
+  body {
+      opentag-br : 2 1;
+      closetag-br: 1 1;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+      opentag-br : 2 0;
+      closetag-br: 0 2;
+  }
+
+  pre {
+    text-fm-resv: true;
+  }
