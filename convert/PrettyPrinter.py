@@ -314,18 +314,17 @@ class PrettyPrinter:
                     if previous_text == '\v':
                         previous_text = '\n\v\n'
                     elif PrettyPrinter.trimmed(previous_text, '\n\t ') != '':
-                        indent_ = ' ' * (indent_para * lvl) if indent_para * lvl > 0 else ''
+                        css_indent = ' ' * (indent_para * lvl) if indent_para * lvl > 0 else ''
                         if _HAVE_CSSINFO:
                             cp = _CSSInfo(previous_text)
                             reformat_css = '\n' + cp.getReformattedCSSText(not bool(cssfold)) + '\n'
-                            previous_text = PrettyPrinter.RegexSub('\n', '\n' + indent_, reformat_css)
+                            previous_text = PrettyPrinter.RegexSub('\n', '\n' + css_indent, reformat_css)
                         # If CSSInfo is not available, leave the CSS text as-is.
 
+                previous_text = source[last_tag_end_pos:ti.pos]
                 if props.text_fm_resv:
-                    previous_text = source[last_tag_end_pos:ti.pos]
                     pre_br = ''
                 else:
-                    previous_text = source[last_tag_end_pos:ti.pos]
                     previous_text = PrettyPrinter.condenseText(previous_text)
 
                 out.append(previous_text + pre_br + indent + tag + post_br)
