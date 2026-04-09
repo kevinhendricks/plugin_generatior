@@ -151,7 +151,7 @@ class Properties:
 
 _RE_INT         = re.compile(r'^-?\d+$')
 _RE_INT_INT     = re.compile(r'^\d+ \d+$')
-_RE_BOOL        = re.compile(r'true|false')
+_RE_BOOL        = re.compile(r'^(true|false)$')
 _RE_WILDCARD    = re.compile(r'[^ ]\*|\*[^ :]')
 _RE_INDENT      = re.compile(r'@indent (\d+);')
 _RE_CSSFOLD     = re.compile(r'@css-fold (true|false);')
@@ -344,14 +344,14 @@ class XhtmlFormatParser:
                         self._properties_map[sel].inner_ind_adj = int(value)
 
                     elif key == 'attr-fm-resv':
-                        if not _RE_BOOL.search(value):
+                        if not _RE_BOOL.match(value):
                             continue
                         if sel not in self._properties_map:
                             self._properties_map[sel] = Properties()
                         self._properties_map[sel].attr_fm_resv = 1 if value == 'true' else 0
 
                     elif key == 'text-fm-resv':
-                        if not _RE_BOOL.search(value):
+                        if not _RE_BOOL.match(value):
                             continue
                         if sel not in self._properties_map:
                             self._properties_map[sel] = Properties()
